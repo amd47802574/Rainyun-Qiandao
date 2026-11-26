@@ -14,20 +14,20 @@
 
 **本分支特色功能：**
 
-1. ✅ Docker 一键部署 —— 提供 `Dockerfile` 与 `docker-compose`，开箱即用，无需配置环境
-2. ✅ GitHub Actions —— 支持利用 GitHub Actions 免费资源进行每日自动签到，无需服务器
-3. ✅ 宝塔面板 (BT Panel) / Linux 特殊虚拟主机运行 —— 提供 `script/run_bt.sh` 脚本，无需配置环境
-4. ✅ 多账号支持 —— 支持配置无限个账号并发签到（使用 `|` 分隔），各账号随机浏览器指纹，并发执行
-5. ✅ 多通道通知 —— 支持 PushPlus、WXPusher、钉钉、邮件等多种通知方式
-6. ✅ 代理 IP 池 —— 支持配置 HTTP 代理，防止因 IP 封锁导致的签到失败
-7. ✅ 智能截图 —— 签到成功/失败自动截图并压缩上传，不仅有图有真相，还节省流量
-8. ✅ 拦截自动代理 —— 动态探测 `app.rainyun.com` 可达性，被拦截时自动抓取国内免费代理绕过（无需手动配置，直连可达时优先直连，覆盖海外 Actions、海外/国内 VPS、Docker 等所有环境）
-9. ✅ 签到状态校验 —— 点击领取奖励后轮询检查按钮是否变为"已完成"，检测验证码加载框（三个点）防止网络慢导致误判
+1. ✅ Docker 一键部署：提供 `Dockerfile` 与 `docker-compose`，开箱即用，无需配置环境
+2. ✅ GitHub Actions：支持利用 GitHub Actions 免费资源进行每日自动签到，无需服务器
+3. ✅ 宝塔面板 (BT Panel) / Linux 特殊虚拟主机运行：提供 `script/run_bt.sh` 脚本，无需配置环境
+4. ✅ 多账号支持：支持配置无限个账号并发签到（使用 `|` 分隔），各账号随机浏览器指纹，并发执行
+5. ✅ 多通道通知：支持 PushPlus、WXPusher、钉钉、邮件等多种通知方式
+6. ✅ 代理 IP 池：支持配置 HTTP 代理，防止因 IP 封锁导致的签到失败
+7. ✅ 智能截图：签到成功/失败自动截图并压缩上传，不仅有图有真相，还节省流量
+8. ✅ 拦截自动代理：动态探测 `app.rainyun.com` 可达性，被拦截时自动抓取国内免费代理绕过（无需手动配置，直连可达时优先直连，覆盖海外 Actions、海外/国内 VPS、Docker 等所有环境）
+9. ✅ 签到状态校验：点击领取奖励后轮询检查按钮是否变为“已完成”，检测验证码加载框（三个点）防止网络慢导致误判
 
 ## 食用方法
 
 > [!NOTE]
-> **GitHub Actions 配置教程**：[https://www.leapya.com/article/2](https://www.leapya.com/article/2) —— Fork 后配置 Secrets 即可每日自动签到，无需服务器。
+> **GitHub Actions 配置教程**：[https://www.leapya.com/article/2](https://www.leapya.com/article/2)，Fork 后配置 Secrets 即可每日自动签到，无需服务器。
 >
 > 下方文档主要针对 Docker / 宝塔面板等自建部署方式。
 > 青龙面板部署方式独立于下方步骤，请见 [青龙面板部署教程](https://www.leapya.com/article/22)。

@@ -986,7 +986,7 @@ def check_rainyun_blocked(timeout=8):
 def validate_proxy(proxy, timeout=5, max_response_time=3):
     """
     测试代理是否可用且响应足够快。
-    仅能连通不够——浏览器会话需要加载多个资源，慢代理会导致页面加载不完整、
+    仅能连通不够：浏览器会话需要加载多个资源，慢代理会导致页面加载不完整、
     Cookie 无法正确送达服务器，进而被误判为"Cookie 失效"。
     :param proxy: 代理地址，格式为 ip:port
     :param timeout: 请求超时时间（秒）
@@ -1870,7 +1870,7 @@ def run_all_accounts():
                 logger.info(f"========== 启动账号 {account_idx}/{len(accounts)} {retry_info} ==========")
 
                 # 重试时复用上次代理，避免换 IP 导致 Cookie 失效。
-                # 但如果上次失败是代理问题（proxy_failed），则不复用——慢代理通过了 validate_proxy
+                # 但如果上次失败是代理问题（proxy_failed），则不复用：慢代理通过了 validate_proxy
                 # 却无法支撑浏览器会话，复用只会重复同样的失败。
                 reuse_proxy = None
                 if results[username]['result'] and results[username]['result'].get('proxy'):
@@ -2701,7 +2701,7 @@ def run_checkin(account_user=None, account_pwd=None, reuse_proxy=None, failed_pr
         # 检查是否需要密码登录
         if "/auth/login" in driver.current_url:
             # 慢代理下页面可能加载不完整就被重定向到 /auth/login，
-            # 需要确认登录表单是否真正渲染——如果页面源码过短说明页面没加载完，是代理问题。
+            # 需要确认登录表单是否真正渲染：如果页面源码过短说明页面没加载完，是代理问题。
             page_src = driver.page_source or ""
             if len(page_src) < 500:
                 logger_adapter.error(f"页面加载不完整（源码仅 {len(page_src)} 字符），疑似代理过慢")
